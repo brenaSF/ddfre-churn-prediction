@@ -31,11 +31,16 @@ Projeto de ciência de dados que prevê o **churn (cancelamento) de clientes** n
 
 ## 📊 Resultados
 
-| Modelo | Accuracy | Precision | Recall | F1 | ROC-AUC |
+| Modelo | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |---|---|---|---|---|---|
-| Random Forest | – | – | – | – | – |
-| XGBoost | – | – | – | – | – |
+| Random Forest | **0.8685** | **0.7642** | 0.4784 | 0.5884 | 0.7211 |
+| XGBoost | 0.8630 | 0.7003 | **0.5293** | **0.6029** | **0.7369** |
 
+
+> Random Forest : Mesmo com uma acurácia alta de 86,8%, o modelo tem um recall baixo de 47,8%, mostrando que pode errar ao não considerar clientes com churn. Além disso, o F1-score também é baixo, cerca de 58,8%. Neste caso, é necessário tirar as variáveis que mostraram um valor de qui-quadrado que não excluí a hipótese nula(H0) para a variável, ou seja, quando variáveis não tem nenhuma relação com churn.
+
+> XBoost : O treinamento da base de dados com o modelo Xboost mostrou melhoria no recall e no F1-score para predição de churn de clientes; os valores de recall e F1 são, respectivamente, 52,9% e 60,3%. A acurácia e precisão caíram um pouco em relação ao modelo random forest, de 86,8% para 86,3% (acurácia) e 76,4% para 70,0% (precisão).
+O modelo ficou mais sensível na classificação de possíveis clientes churn, o que pode gerar o alerta para os analistas.  No entanto, a acurácia e precisão sofreram neste processo, o que é bom para gerar maior engajamento de clientes, mas se mostram mais eficientes se o retorno financeiro dos clientes salvos supere o custo dos alarmes falsos.
 
 ---
 
